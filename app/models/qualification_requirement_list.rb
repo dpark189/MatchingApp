@@ -1,0 +1,2 @@
+class QualificationRequirementList < ApplicationRecord
+end
