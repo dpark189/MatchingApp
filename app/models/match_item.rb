@@ -1,0 +1,2 @@
+class MatchItem < ApplicationRecord
+end
