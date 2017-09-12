@@ -16,17 +16,21 @@ ActiveRecord::Schema.define(version: 20170911224059) do
   enable_extension "plpgsql"
 
   create_table "matchitems", force: :cascade do |t|
+
     t.integer  "qualification_id"
     t.string   "match_item",       null: false
+
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
     t.index ["qualification_id"], name: "index_matchitems_on_qualification_id", using: :btree
   end
 
   create_table "qualifications", force: :cascade do |t|
+
     t.integer  "user_id",    null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+
     t.index ["user_id"], name: "index_qualifications_on_user_id", using: :btree
   end
 
