@@ -1,4 +1,4 @@
 class Qualification < ApplicationRecord
   has_one :user
-  has_many :matchitems
+  has_many :matchitem
 end
