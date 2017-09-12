@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20170911231254) do
   enable_extension "plpgsql"
 
   create_table "matchitems", force: :cascade do |t|
-    t.string   "match_item",       null: false
+    t.string   "matchitem",        null: false
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
     t.integer  "qualification_id"
@@ -24,11 +24,10 @@ ActiveRecord::Schema.define(version: 20170911231254) do
   end
 
   create_table "qualifications", force: :cascade do |t|
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-    t.integer  "matchitems_id"
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.integer  "user_id"
-    t.index ["matchitems_id"], name: "index_qualifications_on_matchitems_id", using: :btree
     t.index ["user_id"], name: "index_qualifications_on_user_id", using: :btree
   end
 
@@ -46,17 +45,13 @@ ActiveRecord::Schema.define(version: 20170911231254) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-    t.integer  "qualifications_id"
     t.string   "first_name",                          null: false
     t.string   "last_name",                           null: false
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
-    t.index ["qualifications_id"], name: "index_users_on_qualifications_id", using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
     t.index ["username"], name: "index_users_on_username", unique: true, using: :btree
   end
 
   add_foreign_key "matchitems", "qualifications"
-  add_foreign_key "qualifications", "matchitems", column: "matchitems_id"
   add_foreign_key "qualifications", "users"
-  add_foreign_key "users", "qualifications", column: "qualifications_id"
 end

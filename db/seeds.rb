@@ -15,5 +15,5 @@ end
 end
 
 10.times do
-  Matchitem.create!(match_item: Faker::Book.genre, qualification_id: rand(1..2))
+  Matchitem.create!(matchitem: Faker::Book.genre, qualification_id: rand(1..2))
 end
