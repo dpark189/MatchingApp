@@ -1,0 +1,18 @@
+<h3> <%= 'username:' %> </h3>
+<%= @users.find(10).username %></br>
+<h3> <%= 'email:' %> </h3>
+<%= @users.find(10).email %></br>
+<h3> <%= "first name:" %> </h3>
+<%= @users.find(10).first_name %></br>
+<h3> <%= 'last_name:' %> </h3>
+<%= @users.find(10).last_name %></br>
+
+<div class="qualification-list">
+  <% @users.find(10).qualification.matchitems.each do |match| %>
+  <li class="seeker-match-item-list">
+
+    <%= match.match_item %>
+
+  </li>
+  <% end %>
+</div>
