@@ -1,0 +1,49 @@
+<h3>User's name</h3>
+<%= @users.find(8).first_name %> <%= " " %> <%= @users.find(8).last_name %>
+<h3>Username</h3>
+<%= @users.find(8).username %>
+<h3>Email</h3>
+<%= @users.find(8).email %>
+
+<h3>Qualifications</h3>
+<div class="user-qualifications">
+  <% @qualifications.find_by(user_id: 8).matchitem.each do |matchitem| %>
+    <%= matchitem.name %><br>
+  <% end %>
+</div>
+
+<h3>Requirements</h3>
+<div class="user-requirements">
+  <% @requirements.find(2).matchitem.each do |matchitem| %>
+    <%= matchitem.name %><br>
+  <% end %>
+</div>
+
+<div class="matching">
+  <% q = Array.new %>
+  <% r = Array.new %>
+  <% @qualifications.find_by(user_id: 8).matchitem.each do |matchitem| %>
+    <% q << matchitem.name %>
+  <% end %>
+  <% @requirements.find(2).matchitem.each do |matchitem| %>
+    <% r << matchitem.name %>
+  <% end %>
+
+  <% i = 0 %>
+
+  <% r.each do |r| %>
+    <% q.each do |q| %>
+      <% if q === r %>
+        <% i = i + 1 %>
+      <% else %>
+      <% end %>
+    <% end %>
+  <% end %>
+  <h3>Match Percentage</h3>
+  <% r_number = r.length.to_f %>
+  <% ratio = i.to_f/r_number %>
+  <% ratio_calc = ratio * 100 %>
+  <% ratio_calc = ratio_calc.round(2) %>
+  <% percentage = number_to_percentage(ratio_calc, percision: 2, strip_insignificant_zeros: true) %>
+  <%= percentage %>
+</div>
