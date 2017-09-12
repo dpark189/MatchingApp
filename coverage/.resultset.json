@@ -26,15 +26,23 @@
         1,
         null
       ],
-      "/Users/asdf/challenges/matching-app/app/models/match_item.rb": [
+      "/Users/asdf/challenges/matching-app/app/models/matchitem.rb": [
         1,
+        null,
         1,
         null,
         1,
         1,
+        null,
+        null
+      ],
+      "/Users/asdf/challenges/matching-app/app/models/qualification_requirement_list.rb": [
+        1,
         null
       ],
       "/Users/asdf/challenges/matching-app/app/models/qualification.rb": [
+        1,
+        1,
         1,
         null
       ],
@@ -68,12 +76,8 @@
         0,
         0,
         0
-      ],
-      "/Users/asdf/challenges/matching-app/app/models/qualification_requirement_list.rb": [
-        0,
-        0
       ]
     },
-    "timestamp": 1505172777
+    "timestamp": 1505184894
   }
 }

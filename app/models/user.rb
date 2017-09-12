@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   has_one :qualifications
-  has_many :matc_items, through: :qualifications
+  has_many :matchitems, through: :qualifications
 
   validates :first_name, presence: true
   validates :last_name, presence: true

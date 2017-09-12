@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :match_item do
-    sequence(:match_item) {|n| "match item #{n}"}
+  factory :matchitems do
+    sequence(:matchitems) {|n| "match item #{n}"}
   end
 end
