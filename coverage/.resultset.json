@@ -1,51 +1,6 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/asdf/challenges/matching-app/app/models/user.rb": [
-        1,
-        1,
-        1,
-        null,
-        1,
-        1,
-        null,
-        1,
-        1,
-        null,
-        null,
-        1,
-        null,
-        null
-      ],
-      "/Users/asdf/challenges/matching-app/app/models/application_record.rb": [
-        1,
-        1,
-        null
-      ],
-      "/Users/asdf/challenges/matching-app/app/helpers/application_helper.rb": [
-        1,
-        null
-      ],
-      "/Users/asdf/challenges/matching-app/app/models/matchitem.rb": [
-        1,
-        null,
-        1,
-        null,
-        1,
-        1,
-        null,
-        null
-      ],
-      "/Users/asdf/challenges/matching-app/app/models/qualification_requirement_list.rb": [
-        1,
-        null
-      ],
-      "/Users/asdf/challenges/matching-app/app/models/qualification.rb": [
-        1,
-        1,
-        1,
-        null
-      ],
       "/Users/asdf/challenges/matching-app/app/channels/application_cable/channel.rb": [
         0,
         0,
@@ -63,7 +18,21 @@
         0,
         0
       ],
+      "/Users/asdf/challenges/matching-app/app/controllers/homes_controller.rb": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
       "/Users/asdf/challenges/matching-app/app/controllers/static_pages_controller.rb": [
+        0,
+        0
+      ],
+      "/Users/asdf/challenges/matching-app/app/helpers/application_helper.rb": [
         0,
         0
       ],
@@ -76,8 +45,62 @@
         0,
         0,
         0
+      ],
+      "/Users/asdf/challenges/matching-app/app/models/application_record.rb": [
+        0,
+        0,
+        0
+      ],
+      "/Users/asdf/challenges/matching-app/app/models/matchitem.rb": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/asdf/challenges/matching-app/app/models/qualification.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/asdf/challenges/matching-app/app/models/qualification_requirement_list.rb": [
+        0,
+        0
+      ],
+      "/Users/asdf/challenges/matching-app/app/models/requirement.rb": [
+        0,
+        0,
+        0
+      ],
+      "/Users/asdf/challenges/matching-app/app/models/user.rb": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
       ]
     },
-    "timestamp": 1505188207
+    "timestamp": 1505496372
   }
 }
