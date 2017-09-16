@@ -4,5 +4,6 @@ class HomesController < ApplicationController
     @qualifications = Qualification.all
     @requirements = Requirement.all
     @match_items = Matchitem.all
+    @current_user = current_user
   end
 end
