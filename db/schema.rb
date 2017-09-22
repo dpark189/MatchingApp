@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170922161643) do
+ActiveRecord::Schema.define(version: 20170922161935) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,17 +47,17 @@ ActiveRecord::Schema.define(version: 20170922161643) do
   end
 
   create_table "listings", force: :cascade do |t|
-    t.integer  "user_id",             null: false
-    t.string   "job_title",           null: false
-    t.string   "type_of_employment",  null: false
-    t.string   "required_education"
-    t.string   "college_major"
+    t.integer  "user_id",                null: false
+    t.string   "job_title",              null: false
     t.integer  "max_starting_salary"
-    t.integer  "benefits"
     t.integer  "publish_status"
-    t.string   "description",         null: false
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
+    t.string   "description",            null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.integer  "type_of_employments_id", null: false
+    t.integer  "education_levels_id"
+    t.integer  "college_majors_id"
+    t.integer  "benefits_id"
     t.index ["user_id"], name: "index_listings_on_user_id", using: :btree
   end
 

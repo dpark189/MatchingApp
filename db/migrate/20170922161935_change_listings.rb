@@ -15,7 +15,7 @@ class ChangeListings < ActiveRecord::Migration[5.0]
     remove_column :listings, :college_majors_id
     remove_column :listings, :benefits_id
     add_column :listings, :type_of_employment, :string
-    add_column :listings, :requiaddred_education, :string
+    add_column :listings, :required_education, :string
     add_column :listings, :college_major, :string
     add_column :listings, :benefits, :string
   end
