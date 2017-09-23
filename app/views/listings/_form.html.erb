@@ -1,0 +1,44 @@
+<%= form_for [@listing] do |f| %>
+
+<div class="listing-form">
+  <% if @listing.errors.any? %>
+    <div id="error-explanation-listings">
+      <h2> <%= pluralize(@listing.errors.count, "error") %> prohibited this listing from being saved: </h2>
+
+      <ul>
+        <% @listing.errors.full_message.each do |msg| %>
+        <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+    <% end %>
+
+
+    <div class="listing-form-body">
+
+      <div class="listing-form job-title">
+        <%= f.label :job_title, "Position Title" %>
+        <div class="job-title-input">
+          <%= f.text_field :job_title %>
+        </div>
+      </div>
+
+      <div class="listing-form description">
+        <%= f.label :description, "Job Description" %>
+        <div class="job-description-input">
+          <%= f.text_area(:description, size: "20x20") %>
+        </div>
+      </div>
+
+      <div class="listing-form max-starting-salary">
+        <%= f.label :max_starting_salary, "Maximum Starting Salary($)" %>
+        <div class="max-starting-salary-input">
+          <%= f.number_field :max_starting_salary %>
+        </div>
+      </div>
+      <div class="form-actions">
+        <%= f.submit 'Publish', class: 'button' %>
+      </div>
+    </div>
+    <% end %>
+</div>

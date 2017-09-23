@@ -1,0 +1,10 @@
+<h3>
+  <%= "Job title: #{@listing.job_title}" %>
+</h3>
+<h4>
+  <%= "Posted By: #{@listing.user.username.capitalize}" %>
+</h4>
+<ul>
+  <label for="">Job Description</label>
+    <p><%= @listing.description %></p>
+</ul>

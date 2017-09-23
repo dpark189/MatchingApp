@@ -1,0 +1,10 @@
+<div>
+  <% @listings.each do |listing|%>
+  <h5>Job Title: <%= listing.job_title %></h5>
+  <div>Post Author</div>
+  <li><%= listing.user.username %></li>
+  <div>Job description</div>
+  <li><%= listing.description %></li>
+  <br><br>
+  <% end %>
+</div>
