@@ -10,5 +10,4 @@ class Listing < ApplicationRecord
   validates :user, presence: true
   validates :job_title, presence: true
   validates :description, presence: true
-  validates :type_of_employments, presence: true
 end
