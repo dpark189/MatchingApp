@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170922161935) do
+ActiveRecord::Schema.define(version: 20170922233355) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20170922161935) do
   create_table "benefits", force: :cascade do |t|
     t.integer  "listings_id"
     t.string   "name",        null: false
-    t.string   "descripiton"
+    t.string   "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.index ["listings_id"], name: "index_benefits_on_listings_id", using: :btree
@@ -47,17 +47,13 @@ ActiveRecord::Schema.define(version: 20170922161935) do
   end
 
   create_table "listings", force: :cascade do |t|
-    t.integer  "user_id",                null: false
-    t.string   "job_title",              null: false
+    t.integer  "user_id",             null: false
+    t.string   "job_title",           null: false
     t.integer  "max_starting_salary"
     t.integer  "publish_status"
-    t.string   "description",            null: false
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
-    t.integer  "type_of_employments_id", null: false
-    t.integer  "education_levels_id"
-    t.integer  "college_majors_id"
-    t.integer  "benefits_id"
+    t.string   "description",         null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
     t.index ["user_id"], name: "index_listings_on_user_id", using: :btree
   end
 
@@ -80,6 +76,8 @@ ActiveRecord::Schema.define(version: 20170922161935) do
   create_table "requirements", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "listing_id"
+    t.index ["listing_id"], name: "index_requirements_on_listing_id", using: :btree
   end
 
   create_table "type_of_employments", force: :cascade do |t|
@@ -115,4 +113,5 @@ ActiveRecord::Schema.define(version: 20170922161935) do
     t.index ["username"], name: "index_users_on_username", unique: true, using: :btree
   end
 
+  add_foreign_key "requirements", "listings"
 end
