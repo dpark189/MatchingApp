@@ -7,7 +7,7 @@ class UserPolicy < ApplicationPolicy
   end
 
   def index?
-    @current_user.admin? if user
+    @current_user.admin?
   end
 
   def show?
@@ -18,4 +18,14 @@ class UserPolicy < ApplicationPolicy
     @current_user.admin?
   end
 
+  def destroy?
+      return false if @current_user == @user
+      @current_user.admin?
+    end
+end
+
+private
+
+def user_params
+  params.require(:user).permit(:email, :username, :first_name, :last_name)
 end

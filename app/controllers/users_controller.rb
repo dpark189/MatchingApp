@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_filter :authenticate_user!
+  before_action :authenticate_user!
   after_action :verify_authorized
 
   def index
@@ -18,6 +18,7 @@ class UsersController < ApplicationController
     user.destroy
     redirect_to users_path, :notice => "User deleted."
   end
+
 
   def update
     @user = User.find(params[:id])
