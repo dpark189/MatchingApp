@@ -2,6 +2,8 @@ class ListingsController < ApplicationController
   before_action :company?, only: [:new, :create, :update]
   before_action :admin?, only: [:destroy, :update, :update]
 
+  autocomplete :matchitems, :name
+
   def index
     @users = User.all
     @listings = Listing.all
