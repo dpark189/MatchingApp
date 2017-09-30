@@ -8,8 +8,8 @@ class Listing < ApplicationRecord
   has_many :matchitems, through: :requirements
   accepts_nested_attributes_for :type_of_employments
   accepts_nested_attributes_for :education_levels
-  accepts_nested_attributes_for :college_major
-  accepts_nested_attributes_for :benefit
+  accepts_nested_attributes_for :college_majors
+  accepts_nested_attributes_for :benefits
   accepts_nested_attributes_for :requirement
   accepts_nested_attributes_for :matchitems
 

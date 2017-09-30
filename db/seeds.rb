@@ -7,11 +7,18 @@
 # #   Character.create(name: 'Luke', movie: movies.first)
 # #
 require 'csv'
+#
+# csv_text = File.read(Rails.root.join('lib', 'seeds', 'skill_list.csv'))
+# csv = CSV.parse(csv_text, :headers => false, :encoding => 'ISO-8859-1')
+# csv.each do |item|
+#   Matchitem.create(name: "#{item}")
+#   puts "#{item} saved"
+# end
 
-csv_text = File.read(Rails.root.join('lib', 'seeds', 'skill_list.csv'))
-csv = CSV.parse(csv_text, :headers => false, :encoding => 'ISO-8859-1')
-csv.each do |item|
-  Matchitem.create(name: "#{item}")
+csv_industry_text = File.read(Rails.root.join('lib', 'seeds', 'industry_list.csv'))
+csv_industry = CSV.parse(csv_industry_text, :headers => false, :encoding => 'ISO-8859-1')
+csv_industry.each do |item|
+  Industry.create(name: "#{item}")
   puts "#{item} saved"
 end
 
