@@ -6,6 +6,13 @@ class Listing < ApplicationRecord
   has_many :benefits
   has_one :requirement
   has_many :matchitems, through: :requirements
+  accepts_nested_attributes_for :type_of_employments
+  accepts_nested_attributes_for :education_levels
+  accepts_nested_attributes_for :college_majors
+  accepts_nested_attributes_for :benefits
+  accepts_nested_attributes_for :requirement
+  accepts_nested_attributes_for :matchitems
+
 
   validates :user, presence: true
   validates :job_title, presence: true

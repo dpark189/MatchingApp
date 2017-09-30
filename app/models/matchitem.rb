@@ -1,9 +1,9 @@
 class Matchitem < ApplicationRecord
 
-  belongs_to :qualification
-  belongs_to :requirement
+  belongs_to :qualification, optional: true
+  belongs_to :requirement, optional: true
 
   validates :name, presence: true, uniqueness: true
-  validates :qualification_id, presence: true
+
 
 end

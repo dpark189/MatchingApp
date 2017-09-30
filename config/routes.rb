@@ -6,5 +6,8 @@ Rails.application.routes.draw do
     root to: "devise/sessions#new"
   end
   resources :users
-  resources :listings
+  resources :listings do
+    get :autocomplete_matchitem_name, :on => :collection
+  end
+
 end

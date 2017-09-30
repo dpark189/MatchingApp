@@ -11,5 +11,7 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery-ui/widgets/autocomplete
 //= require jquery_ujs
+//= require autocomplete-rails
 //= require_tree .

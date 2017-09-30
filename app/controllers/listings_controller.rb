@@ -1,6 +1,8 @@
 class ListingsController < ApplicationController
   before_action :company?, only: [:new, :create, :update]
-  before_action :admin?, only: [:destroy, :update, :update]
+  before_action :admin?, only: [:new, :create, :destroy, :update]
+
+  autocomplete :matchitems, :name, :full => true
 
   def index
     @users = User.all
@@ -17,6 +19,7 @@ class ListingsController < ApplicationController
     @college_major = CollegeMajor.new
     @education_level = EducationLevel.new
     @requirement = Requirement.new
+    @matchitems = Matchitem.all
   end
 
   private
@@ -27,7 +30,7 @@ class ListingsController < ApplicationController
 
   def admin?
     if !current_user.admin?
-      flash[:alert] = "Access denied"
+      flash[:alert] = "Access denied you are not an admin"
       redirect_to (request.referrer || root_path)
     end
   end
@@ -41,8 +44,7 @@ class ListingsController < ApplicationController
 
   def company?
     if !current_user.company?
-      flash[:alert] = "Access denied"
-      redirect_to (request.referrer || root_path)
+      flash[:alert] = "Access denied you are not a company"
     end
   end
 end
