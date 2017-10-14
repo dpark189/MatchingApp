@@ -67,6 +67,13 @@
         1,
         1,
         1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
         null,
         1,
         1,
@@ -80,7 +87,7 @@
         1,
         null,
         1,
-        1,
+        null,
         null,
         null
       ],
@@ -91,9 +98,7 @@
       "/Users/asdf/challenges/matching-app/app/models/type_of_employment.rb": [
         1,
         1,
-        null,
         1,
-        null,
         null
       ],
       "/Users/asdf/challenges/matching-app/app/controllers/application_controller.rb": [
@@ -264,12 +269,9 @@
         1,
         1,
         1,
-        null
-      ],
-      "/Users/asdf/challenges/matching-app/app/models/qualification.rb": [
+        null,
         1,
-        1,
-        1,
+        null,
         null
       ],
       "/Users/asdf/challenges/matching-app/app/channels/application_cable/channel.rb": [
@@ -279,6 +281,13 @@
         0
       ],
       "/Users/asdf/challenges/matching-app/app/channels/application_cable/connection.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/asdf/challenges/matching-app/app/controllers/college_major_controller.rb": [
+        0,
         0,
         0,
         0,
@@ -343,6 +352,30 @@
         0,
         0,
         0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/asdf/challenges/matching-app/app/controllers/requirement_controller.rb": [
+        0,
+        0,
+        0,
+        0,
         0
       ],
       "/Users/asdf/challenges/matching-app/app/jobs/application_job.rb": [
@@ -355,10 +388,23 @@
         0,
         0
       ],
+      "/Users/asdf/challenges/matching-app/app/models/industry.rb": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/asdf/challenges/matching-app/app/models/qualification.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
       "/Users/asdf/challenges/matching-app/app/policies/listing_policy.rb": [
 
       ]
     },
-    "timestamp": 1506530813
+    "timestamp": 1508021502
   }
 }
