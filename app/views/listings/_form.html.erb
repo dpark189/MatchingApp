@@ -6,7 +6,8 @@
       <h2> <%= pluralize(@listing.errors.count, "error") %> prohibited this listing from being saved: </h2>
 
       <ul>
-        <% @listing.errors.full_message.each do |msg| %>
+        <% byebug %>
+        <% @listing.errors.each do |msg| %>
         <li><%= msg %></li>
         <% end %>
       </ul>
@@ -15,6 +16,13 @@
 
 
     <div class="listing-form-body">
+
+      <div class="listing-form">
+        <%= f.label :user_id %>
+        <div>
+          <%= f.select :user_id,options_for_select(User.all.pluck(:username,:id)) %>
+        </div>
+      </div>
 
       <div class="listing-form job-title">
         <%= f.label :job_title, "Position Title" %>
@@ -36,6 +44,44 @@
           <%= f.number_field :max_starting_salary %>
         </div>
       </div>
+
+      <!-- Add Benefits -->
+      <h4>Benefits</h4>
+      <%= f.simple_fields_for :benefits do |benefit|%>
+          <% render 'benefit_fields', :f => benefit%>
+      <% end %>
+      <div><%= link_to_add_association '+ Add More Benefits', f, :benefits %></div>
+
+      <!-- Add Education -->
+      <h4>Education</h4>
+      <%= f.simple_fields_for :education_levels do |education|%>
+          <% render 'education_level_fields', :f => education%>
+      <% end %>
+      <div><%= link_to_add_association '+ Add More Education Levels', f, :education_levels %></div>
+
+      <!-- Add College Majors -->
+      <h4>College Majors</h4>
+      <%= f.simple_fields_for :college_majors do |college|%>
+          <% render 'college_major_fields', :f => college%>
+      <% end %>
+      <div><%= link_to_add_association '+ Add More College Majors', f, :college_majors %></div>
+
+      <!-- Add Type of Employments -->
+      <h4>Type of Employment</h4>
+      <%= f.simple_fields_for :type_of_employments do |empoyment|%>
+          <% render 'type_of_employment_fields', :f => empoyment%>
+      <% end %>
+      <div><%= link_to_add_association '+ Add More Employment Types', f, :type_of_employments %></div>
+
+      <!-- Add Matchitems -->
+      <!-- <h4>Requirements</h4>
+      <%= f.simple_fields_for :requirements do |requirement| %>
+        <% render 'requirement_fields', :f => requirement %>
+      <% end %>
+      <div>
+        <%= link_to_add_association '+ Add More requirements', f, :requirements %>
+      </div> -->
+
       <div class="form-actions">
         <%= f.submit 'Publish', class: 'button' %>
       </div>

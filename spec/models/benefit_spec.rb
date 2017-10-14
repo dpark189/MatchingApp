@@ -10,7 +10,7 @@ describe 'Benefit' do
   context 'create a benefit item' do
     let(:user){ FactoryGirl.build(:user) }
     let(:listing){ Listing.new(user_id: user, job_title: "job title", max_starting_salary: "1", description: "job description") }
-    let(:benefit){ FactoryGirl.build(:benefit, :listings_id => listing) }
+    let(:benefit){ FactoryGirl.build(:benefit, :listing_id => listing) }
 
     it 'has a listing association' do
       expect(benefit.listing).to be(listing.id)

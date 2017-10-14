@@ -10,7 +10,7 @@ describe 'CollegeMajor' do
   context 'create a college_major item' do
     let(:user){ FactoryGirl.build(:user) }
     let(:listing){ Listing.new(user_id: user, job_title: "job title", max_starting_salary: "1", description: "job description") }
-    let(:college_major){ FactoryGirl.build(:college_major, :listings_id => listing) }
+    let(:college_major){ FactoryGirl.build(:college_major, :listing_id => listing) }
 
     it 'has a listing association' do
       expect(college_major.listing).to be(listing.id)

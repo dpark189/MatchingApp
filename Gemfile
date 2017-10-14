@@ -17,6 +17,9 @@ gem 'mini_magick'
 gem 'carrierwave-aws'
 gem 'active_model_serializers'
 gem 'roo'
+gem 'byebug'
+# for nested forms
+gem 'cocoon'
 
 group :development, :test do
   gem 'capybara'

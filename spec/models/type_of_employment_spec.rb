@@ -10,7 +10,7 @@ RSpec.describe TypeOfEmployment, type: :model do
   context 'create a type_of_employment item' do
     let(:user){ FactoryGirl.build(:user) }
     let(:listing){ Listing.new(user_id: user, job_title: "job title", max_starting_salary: "1", description: "job description") }
-    let(:type_of_employment){ FactoryGirl.build(:type_of_employment, :listings_id => listing) }
+    let(:type_of_employment){ FactoryGirl.build(:type_of_employment, :listing_id => listing) }
 
     it 'has a listing association' do
       expect(type_of_employment.listing).to be(listing.id)
