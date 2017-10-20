@@ -1,8 +1,9 @@
 class ListingsController < ApplicationController
-  before_action :company?, only: [:new, :create, :update]
   before_action :admin?, only: [:new, :create, :destroy, :update]
+  before_action :company?, only: [:new, :create, :update]
 
-  autocomplete :matchitems, :name, :full => true
+
+  autocomplete :matchitem, :name
 
   def index
     @users = User.all
@@ -21,6 +22,7 @@ class ListingsController < ApplicationController
     @listing.type_of_employments.build
     @listing.build_requirement
     @listing.requirement.matchitem.build
+    @matchitems = Matchitem.all
   end
 
   def create
@@ -40,13 +42,16 @@ class ListingsController < ApplicationController
   private
 
   def listing_params
-    params.require(:listing).permit(:job_title, :max_starting_salary, :description, :user_id, :search, benefits_attributes: [:name, :description,:_destroy], college_majors_attributes: [:name, :description,:user_id,:_destroy], education_levels_attributes: [:name, :description,:user_id,:_destroy], type_of_employments_attributes: [:name, :description,:user_id,:_destroy])
+    params.require(:listing).permit(:job_title, :max_starting_salary, :description, :user_id, :search, benefits_attributes: [:name, :description,:_destroy], college_majors_attributes: [:name, :description,:user_id,:_destroy], education_levels_attributes: [:name, :description,:user_id,:_destroy], type_of_employments_attributes: [:name, :description,:user_id,:_destroy], requirement_attributes: [], matchitem_attributes: [:name, :description,:user_id,:_destroy] )
   end
 
   def admin?
     if !current_user.admin?
-      flash[:alert] = "Access denied you are not an admin"
-      redirect_to (request.referrer || root_path)
+      if current_user.company?
+      else
+        flash[:alert] = "Access denied you are not an admin"
+        redirect_to (request.referrer || root_path)
+      end
     end
   end
 
@@ -59,7 +64,11 @@ class ListingsController < ApplicationController
 
   def company?
     if !current_user.company?
-      flash[:alert] = "Access denied you are not a company"
+      if current_user.admin?
+      else
+        flash[:alert] = "Access denied you are not a company"
+        redirect_to (request.referrer || root_path)
+      end
     end
   end
 end

@@ -4,10 +4,11 @@
 
   <div class="listing-form">
     <div>
-      <%= f.text_field :name %>
+      <%= f.input :name, label: false, :url => autocomplete_matchitem_name_listings_path, :as => :autocomplete %>
     </div>
   </div>
 
+  <div>
     <%= link_to_remove_association "-Remove", f %>
   </div>
 </div>
