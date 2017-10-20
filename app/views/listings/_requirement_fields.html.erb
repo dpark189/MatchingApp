@@ -1,0 +1,4 @@
+<%= f.simple_fields_for :matchitem do |matchitem|%>
+  <%= render 'matchitem_fields', :f => matchitem %>
+<% end %>
+<div><%= link_to_add_association '+ Add More Requirements', f, :matchitem %></div>

@@ -1,22 +1,11 @@
 <div class="nested-fields">
   <div class="listing-form">
-    <%= f.label :user_id %>
-    <div>
-      <%= f.select :users_id,options_for_select(User.all.pluck(:username,:id)) %>
-    </div>
+
   </div>
 
   <div class="listing-form">
-    <%= f.label :name %>
     <div>
       <%= f.text_field :name %>
-    </div>
-  </div>
-
-  <div class="listing-form">
-    <%= f.label :description %>
-    <div>
-    	<%= f.text_area(:description, size: "20x5") %>
     </div>
   </div>
 

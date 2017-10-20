@@ -11,21 +11,25 @@ require 'csv'
 csv_text = File.read(Rails.root.join('lib', 'seeds', 'skill_list.csv'))
 csv = CSV.parse(csv_text, :headers => false, :encoding => 'ISO-8859-1')
 csv.each do |item|
-  Matchitem.create(name: "#{item}")
-  puts "#{item} saved"
+  clean_item = item.join(",")
+  Matchitem.create(name: clean_item)
+  puts "#{clean_item} saved"
 end
 
 csv_industry_text = File.read(Rails.root.join('lib', 'seeds', 'industry_list.csv'))
 csv_industry = CSV.parse(csv_industry_text, :headers => false, :encoding => 'ISO-8859-1')
 csv_industry.each do |item|
-  Industry.create(name: "#{item}")
-  puts "#{item} saved"
+  clean_item = item.join(",")
+  Industry.create(name: clean_item)
+  puts "#{clean_item} saved"
 end
 
 
 10.times do
   User.create(first_name: Faker::LordOfTheRings.character, last_name: Faker::Book.author, email: Faker::Internet.email, username: Faker::Internet.user_name, password: 'password')
 end
+
+User.create(first_name: "first", last_name: "last", username: "testuser", email: "testemail@email.com", password: "password", role: "admin")
 
 5.times do
   Listing.create!(user_id: rand(1..10), job_title: Faker::Book.author, max_starting_salary: rand(1..10000000), description: Faker::Hacker.say_something_smart)
